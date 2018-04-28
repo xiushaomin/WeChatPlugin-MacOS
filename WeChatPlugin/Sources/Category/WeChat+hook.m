@@ -311,7 +311,7 @@ static char tkRemoteControlWindowControllerKey;     //  远程控制窗口的关
             msgType = @"[非文本]";
         }
         
-        NSString *newMsgContent = [NSString stringWithFormat:@"TK拦截到一条撤回消息: \n%@", msgType];
+        NSString *newMsgContent = [NSString stringWithFormat:@"为什么要撤回？？: \n%@", msgType];
         //      判断是否是自己发起撤回
         if ([revokeMsgData isSendFromSelf]) {
             if (revokeMsgData.messageType == 1) {       // 判断是否为文本消息
@@ -323,13 +323,13 @@ static char tkRemoteControlWindowControllerKey;     //  远程控制窗口的关
             NSString *displayName = [revokeMsgData groupChatSenderDisplayName];
             if (revokeMsgData.messageType == 1) {
                 if ([revokeMsgData isChatRoomMessage]) {
-                    newMsgContent = [NSString stringWithFormat:@"TK拦截到一条撤回消息：\n%@ : %@",displayName, msgContent];
+                    newMsgContent = [NSString stringWithFormat:@"为什么要撤回？？：\n%@ : %@",displayName, msgContent];
                 } else {
-                    newMsgContent = [NSString stringWithFormat:@"TK拦截到一条撤回消息：\n%@", msgContent];
+                    newMsgContent = [NSString stringWithFormat:@"为什么要撤回？？：\n%@", msgContent];
                 }
             } else {
                 if ([revokeMsgData isChatRoomMessage]) {
-                    newMsgContent = [NSString stringWithFormat:@"TK拦截到一条撤回信息: \n %@ : %@", displayName, msgType];
+                    newMsgContent = [NSString stringWithFormat:@"为什么要撤回？？: \n %@ : %@", displayName, msgType];
                 }
             }
         }
